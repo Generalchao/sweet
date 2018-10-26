@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>我的收藏</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/component.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<style type="text/css">
+
+
+</style>
+<body class="">
+
+	<!-- 编辑弹窗 -->
+	<div class="edit_dialog animated">
+		<div class="edit_icon"><i class="icon-star2"></i></div>
+		<div class="cancel"><i class="icon-cross"></i></div>
+	</div>	
+    <div class="tg_mask dialog" id="bottom_dialog_mask"></div>
+
+
+	<div class="list_items">
+		<div class="item">
+			<div class="item_poster" style="background-image: url(img/choiceness_img/000.jpg);"></div>
+			<div class="item_info">
+			<span>芭比娃娃之公主学校</span>
+			<span>17人喜欢</span>
+			<span>英文绘本 · 励志</span>
+			<i class="icon-more"></i>
+			</div>
+		</div>
+		<div class="item">
+			<div class="item_poster" style="background-image: url(img/choiceness_img/001.jpg);"></div>
+			<div class="item_info">
+			<span>芭比娃娃之公主学校</span>
+			<span>17人喜欢</span>
+			<span>英文绘本 · 励志</span>
+			<i class="icon-more"></i>
+			</div>
+		</div>
+		<div class="item">
+			<div class="item_poster" style="background-image: url(img/choiceness_img/002.jpg);"></div>
+			<div class="item_info">
+			<span>芭比娃娃之公主学校</span>
+			<span>17人喜欢</span>
+			<span>英文绘本 · 励志</span>
+			<i class="icon-more"></i>
+			</div>
+		</div>		
+
+	</div>
+
+	<script type="text/javascript">
+		$(".item_info i").click(function(){
+			$("#bottom_dialog_mask").fadeIn(500);
+			$(".edit_dialog").addClass("bounceInUp").removeClass("bounceOutDown").show();
+			$(this).parent().parent().addClass("z-index");
+		});
+
+		$("#bottom_dialog_mask, .cancel").click(function(){
+			$("#bottom_dialog_mask").fadeOut(500);
+			$(".edit_dialog").removeClass("bounceInUp").addClass("bounceOutDown");
+			$(".item").removeClass("z-index");
+		});
+	</script>
+
+
+</body>
+</html>

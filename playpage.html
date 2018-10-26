@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>芭比之公主学校</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/component.css">
+	<link rel="stylesheet" href="css/audioplayer.css" />	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/background-blur.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+	        var $avatarEl = $('.avatar');
+	        var $avatarHolderEl = $('.avatar-holder');
+	        var avatars = [];
+	        $avatarEl.each(function(){
+	            var $avatar = $(this);
+	            var avatarImage = $avatar.find('img').first().attr('src');
+	            avatars.push(avatarImage);
+	        });
+	        $avatarHolderEl.backgroundBlur({
+	            imageURL : avatars[0],
+	            blurAmount : 15, 
+	            imageClass : 'avatar-blur' 
+	        });
+		});
+	</script>
+</head>
+<script type="text/javascript">
+(function(doc){
+	var addEvent='addEventListener',type='gesturestart',qsa='querySelectorAll',scales=[1,1],meta=qsa in doc?doc[qsa]('meta[name=viewport]'):[];
+	function fix(){
+		meta.content='width=device-width,minimum-scale='+scales[0]+',maximum-scale='+scales[1];
+		doc.removeEventListener(type,fix,true);
+	}if((meta=meta[meta.length-1])&&addEvent in doc){
+		fix();
+		scales=[.25,1.6];
+		doc[addEvent](type,fix,true);
+	}
+}(document));
+</script>
+
+<body id="play_box" class="play_bg  animated" style="animation-duration: 1.5s;">
+
+	<header class="cover_content">
+		<ul id="bk-list" class="bk-list clearfix">
+			<li >
+				<div class="bk-book book-1 bk-bookdefault" id="bk-book">
+					<div class="bk-front">
+						<div class="bk-cover " style="background-image: url(img/choiceness_img/000.jpg)">
+							<!-- 封面点赞标识 -->
+							<div class="cover_like animated hinge" id="cover_like"><i class="icon-like"></i></div>
+						</div>
+						<div class="bk-cover-back"></div>
+					</div>
+					<div class="bk-back">
+						<p style="max-height: 50vw;overflow: scroll;">简介：《芭比之公主学校》(又名芭比之魅力公主学院）是芭比公主系列第10部，故事的主角芭比布莱尔是一位孤儿，在偶然的情况下进入了公主学校，却发现了一个关于她身世的秘密，会是怎样的秘密呢？让我们先睹为快吧！</p>
+					</div>
+					<div class="bk-right"></div>
+					<div class="bk-left">
+						<h2>
+							<span>芭比之公主学校</span>
+							<span>英文绘本</span>
+						</h2>
+					</div>
+					<div class="bk-top"></div>
+					<div class="bk-bottom"></div>
+				</div>
+			</li>
+		</ul>
+
+		<h1 class="title">芭比之公主学校</h1>	
+		<div class="tag_box">
+			<span class="tag">励志</span>
+			<span class="tag">公主</span>
+		</div>
+		
+		<div class="list">
+			<span>89人喜欢</span>
+			<span>1350次播放</span>
+			<span>收获82颗糖豆</span>
+		</div>
+	</header>
+
+
+ 	<!-- 操作栏 -->
+	<div class="like_box">
+		<!-- <a href="#" id="show_introbtn"><i class="icon-us" id="like_icon"></i>看介绍</a> -->
+		<a href="#" id="like_btn" class=""><i class="icon-like " id="like_icon"></i>赞 17</a>
+		<a href="#" id="star_btn"><i class="icon-star-1" id="like_icon"></i>收藏 25</a>
+		<a href="#" id="sugar_btn"><i class=" icon-gift"></i>送糖豆 82</a>
+		<a href="#" id="tobottom_btn"><i class="icon-guess"></i>猜喜欢</a>
+	</div>
+
+	<!-- 音频模块 -->
+	<div id="wrapper" class="">
+		<audio  preload="auto" controls>
+			<source src="audio/01.mp3">
+		</audio>
+	</div>	
+
+	<!-- 推荐喜欢 -->
+	<div class="sugar_dialog bottom_dialog animated bounceOutDown" id="recommend_dialog" style="height: 350px;">
+
+		<div class="recommend  card">
+			<div class="title_box">
+				<span class="title">下面有我喜欢的？</span>
+
+			</div>
+			<ul class="row items">
+			    <li class="item item_hot">
+		            <a href="#">
+		                <div class="item-poster" style="background-image: url(img/choiceness_img/001.jpg)"></div>
+		                <span class="item-title">鸭子骑车记（Duck On A Bike）</span>
+		                <span class="item-tag">有声绘本</span>
+		                <span class="like">17人喜欢</span>
+		            </a>
+			    </li>
+			    <li class="item item_hot">
+		            <a href="#">
+		                <div class="item-poster" style="background-image: url(img/choiceness_img/002.jpg)"></div>
+		                <span class="item-title">The kissing hand</span>
+		                <span class="item-tag">有声绘本</span>
+		                <span class="like">999+人喜欢</span>
+		            </a>
+			    </li>
+			    <li class="item item_hot">
+		            <a href="#">
+		                <div class="item-poster" style="background-image: url(img/choiceness_img/001.jpg)"></div>
+		                <span class="item-title">鸭子骑车记</span>
+		                <span class="item-tag">有声绘本</span>
+		                <span class="like">29人喜欢</span>
+		            </a>
+			    </li>
+			    <li class="item item_hot">
+		            <a href="#">
+		                <div class="item-poster" style="background-image: url(img/choiceness_img/001.jpg)"></div>
+		                <span class="item-title">鸭子骑车记</span>
+		                <span class="item-tag">有声绘本</span>
+		                <span class="like">29人喜欢</span>
+		            </a>
+			    </li>
+			    <li class="item item_hot">
+		            <a href="#">
+		                <div class="item-poster" style="background-image: url(img/choiceness_img/001.jpg)"></div>
+		                <span class="item-title">鸭子骑车记</span>
+		                <span class="item-tag">有声绘本</span>
+		                <span class="like">29人喜欢</span>
+		            </a>
+			    </li>
+			</ul>
+		</div>	
+	</div>
+
+
+	<!-- 打赏弹窗 -->
+	<div class="sugar_dialog bottom_dialog animated bounceOutDown" id="sugar_dialog">
+		<div class="choiceness_box white_box card" >
+			<div class="title_box">
+				<span class="title" style="color: #333;">我要送糖豆</span>
+
+			</div>
+			<div class="intro_content" >我有20颗糖豆，已送出10颗</div>
+			<div class="intro_content " >
+				<a class="sugar_item" href="#">1颗</a>
+				<a class="sugar_item" href="#">3颗</a>
+				<a class="sugar_item" href="#">5颗</a>
+				<a class="sugar_item" href="#">10颗</a>
+			</div>
+		</div>
+	</div>
+    <div class="tg_mask dialog" id="bottom_dialog_mask"></div>
+
+
+	<!-- 背景模糊 -->
+	<div class="avatar-holder">
+		<div style="background-color: rgba(0,0,0,.2);position: fixed;top: 0;bottom: 0;left: 0;right: 0;"></div>
+		<div class="avatar-container">
+			<div class="avatar">
+				<img src="img/choiceness_img/000.jpg" alt=""/>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/audioplayer.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$( 'audio' ).audioPlayer();
+	});
+
+	// 弹跳动画结束后删除弹跳class
+	// $('#play_box').addClass(' bounce').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	//   $(this).removeClass(" bounce");
+	// });
+
+	// 点赞
+	$("#like_btn").click(function(){
+		$("#like_btn").toggleClass("like_active");
+		$("#cover_like").toggleClass("tada").show();
+		$("#cover_like").toggleClass("hinge").show();
+
+	});
+	// 看介绍
+	$("#show_introbtn").click(function(){
+
+		$("#bk-book").toggleClass("bk-bookdefault");
+		$("#bk-book").toggleClass("bk-viewback");
+	});
+
+	// 打赏
+	$("#sugar_btn").click(function(){
+		$("#bottom_dialog_mask").fadeIn(500);
+		$("#sugar_dialog").addClass("fadeInUp").removeClass("fadeOutDown").show();
+	});
+	// 收起弹窗
+	$("#bottom_dialog_mask").click(function(){
+		$("#bottom_dialog_mask").fadeOut(500);
+		$(".bottom_dialog").removeClass("fadeInUp").addClass("fadeOutDown");
+	});
+
+
+	$("#tobottom_btn").click(function(){
+		$("#bottom_dialog_mask").fadeIn(500);
+		$("#recommend_dialog").addClass("fadeInUp").removeClass("fadeOutDown").show();
+	});
+	</script>
+</body>
+</html>

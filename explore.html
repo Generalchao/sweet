@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>探索</title>
+<meta name="description" content="A content navigation effect that reminds of jumping on a trampoline" />
+<meta name="keywords" content="svg, animation, trampoline, effect, images, navigation" />
+
+<!--公共样式-->
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/vicons-font.css" />
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="css/component2.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+
+<script type="text/javascript" src="js/snap.svg-min.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body class="demo-1">
+
+	<!-- 底部菜单	 -->
+	<div class="tabbar">
+		<a class="tabbar_item" href="index.html">
+			<i class="icon-choiceness_active"></i>
+		</a>
+		<a class="tabbar_item active" href="#">
+			<i class="icon-explore_active"></i>
+		</a>		
+		<a class="tabbar_item" href="medal.html">
+			<i class="icon-medal_active"></i>
+		</a>
+		<a class="tabbar_item" href="mine.html">
+			<i class="icon-mine_active"></i>
+		</a>				
+	</div>
+
+<div id="morph-shape" class="morph-shape" data-morph-next="M301,301c0,0-83.8-21-151-21C71.8,280-1,301-1,301s21-65.7,21-151C20,79.936-1-1-1-1s73,11,151,11c85,0,151-11,151-11
+s-21,66.43-21,151C280,229.646,301,301,301,301z">
+	<svg width="100%" height="100%" viewBox="0 0 300 300" preserveAspectRatio="none">
+		<path d="M301,301c0,0-83.8,0-151,0c-78.2,0-151,0-151,0s0-65.7,0-151C-1,79.936-1-1-1-1s73,0,151,0c85,0,151,0,151,0s0,66.43,0,151
+C301,229.646,301,301,301,301z" />
+	</svg>
+</div>
+
+<div class="main">
+	<div class="container">
+		<!-- <header class="codrops-header">
+			<h1>图片跳动效果</h1>
+		</header> -->
+		
+		<div class="stack">
+			<ul id="elasticstack" class="stack__images">
+				<li><div class="explore_poster" style="background-image:url(img/choiceness_img/000.jpg); "></div></li>
+				<li><div class="explore_poster" style="background-image:url(img/choiceness_img/001.jpg); "></div></li>
+				<li><div class="explore_poster" style="background-image:url(img/choiceness_img/002.jpg); "></div></li>
+				<li><div class="explore_poster" style="background-image:url(img/choiceness_img/003.jpg); "></div></li>
+				<li><div class="explore_poster" style="background-image:url(img/choiceness_img/004.jpg); "></div></li>
+				<li><div class="explore_poster" style="background-image:url(img/choiceness_img/005.jpg); "></div></li>
+			</ul>
+			<ul id="stack-titles" class="stack__titles">
+				<li class="current">
+					<blockquote>
+					  <p>芭比娃娃之公主学校</p>
+					  <footer>17人喜欢</footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>鸭子骑车记</p>
+					  <footer>18人喜欢</footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>The Kissing Hand</p>
+					  <footer>19人喜欢</footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>白尾鹿的花丛大冒险</p>
+					  <footer>20人喜欢</footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>坏脾气的格拉夫</p>
+					  <footer>21人喜欢</footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>下雪真好玩</p>
+					  <footer>22人喜欢</footer>
+					</blockquote>
+				</li>
+			</ul>
+			<button id="stack-next" class="stack__next">
+				<i class="icon-change"></i>
+				<span>换一个</span>
+			</button>
+		</div><!-- /stack -->
+		
+	</div><!-- /container -->
+</div><!-- /main-->
+
+<script type="text/javascript" src="js/draggabilly.pkgd.min.js"></script>
+<script type="text/javascript" src="js/elastiStack.js"></script>
+<script type="text/javascript">
+(function() {
+	var body = document.body,
+		titles = [].slice.call( document.querySelectorAll( '#stack-titles > li' ) ),
+		totalTitles = titles.length,
+		stack = new ElastiStack( document.getElementById( 'elasticstack' ), {
+			onUpdateStack : function( idx ) {
+				classie.remove( titles[idx === 0 ? totalTitles - 1 : idx - 1], 'current' );
+				classie.add( titles[idx], 'current' );
+			}
+		} ),
+		shapeEl = document.getElementById( 'morph-shape' ),
+		s = Snap( shapeEl.querySelector( 'svg' ) ),
+		pathEl = s.select( 'path' ),
+		paths = { 
+			reset : pathEl.attr( 'd' ),
+			next  : shapeEl.getAttribute( 'data-morph-next' )
+		};
+
+	document.getElementById( 'stack-next' ).addEventListener( 'mousedown', nextItem );
+	
+	function nextItem() {
+		classie.add( body, 'animating' );
+		classie.add( body, 'navigate-next' );
+		pathEl.stop().animate( { 'path' : paths.next }, 450, mina.easeinout, function() {
+			classie.remove( body, 'navigate-next' );
+			stack.nextItem( { transform : 'translate3d(0,-60px,400px)' } );
+			pathEl.stop().animate( { 'path' : paths.reset }, 100, mina.easeout, function() {
+				classie.remove( body, 'animating' );
+			} );
+		} );
+	}
+})();
+</script>
+</body>
+</html>

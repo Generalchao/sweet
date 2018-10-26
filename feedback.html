@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>吐槽不爽</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<style>
+
+</style>
+</head>
+<body class="yellow_body">
+<div class="center">
+
+  <div class="switch">
+    <input id="one" class="input" type="checkbox" />
+    <label for="one" class="slider"></label>
+    <label for="one" class="label">内容不够吸引！我都听睡着了。</label>
+  </div>
+
+  <div class="switch">
+    <input id="two" class="input" type="checkbox" />
+    <label for="two" class="slider"></label>
+    <label for="two" class="label">播放卡顿！我等的花儿都谢了！</label>
+  </div>
+
+  <div class="switch">
+    <input id="three" class="input" type="checkbox" />
+    <label for="three" class="slider"></label>
+    <label for="three" class="label">更新太慢！属蜗牛的？</label>
+  </div>
+
+  <div class="switch">
+    <input id="four" class="input" type="checkbox" />
+    <label for="four" class="slider"></label>
+    <label for="four" class="label">体验不是太爽！能否再新颖点？</label>
+  </div>
+
+  <div class="switch">
+    <input id="five" class="input" type="checkbox" />
+    <label for="five" class="slider"></label>
+    <label for="five" class="label">糖豆送的太少！！</label>
+  </div>
+
+  <div class="switch">
+    <input id="six" class="input" type="checkbox" />
+    <label for="six" class="slider"></label>
+    <label for="six" class="label">傲娇脸！就是觉得不爽！</label>
+  </div>
+
+  <textarea class="text_box" id="textarea" rows="4" placeholder="留下您想说的话（可不填）"></textarea>
+  <a href="" class="sweet_btn">提交吐槽</a>
+</div>
+
+<script>
+var checkboxes = document.querySelectorAll('input');
+
+for( var i = 0; i < checkboxes.length; i++ ) {
+
+  checkboxes[i].addEventListener("change", function() {
+    updateBugs(this);
+  });
+}
+
+function updateBugs(changedElement) {
+  var checkedCount = document.querySelectorAll('input:checked').length;
+
+  // No bugs, thats impossible!
+  if( checkedCount === 0 ) {
+    turnOnRandomBug(changedElement);
+    if( Math.random() >= 0.85 ) {
+      turnOnRandomBug(changedElement);
+    }
+  }
+}
+
+function turnOnRandomBug(excluding) {
+  turnOn = Math.floor(Math.random() * checkboxes.length);
+
+  if( checkboxes[turnOn] === excluding) {
+    turnOn = turnOn + 1;
+    if( turnOn > (checkboxes.length - 1)) {
+      turnOn = 0;
+    }
+  }
+
+  checkboxes[turnOn].checked = true;
+}
+
+setTimeout(function() {
+  turnOnRandomBug(null);
+}, 400)
+
+</script>
+</body>
+</html>
