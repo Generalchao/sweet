@@ -1,8 +1,3 @@
-/*
-	AUTHOR: Osvaldas Valutis, www.osvaldas.info
-*/
-
-
 
 ;(function( $, window, document, undefined )
 {
