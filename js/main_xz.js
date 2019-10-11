@@ -32,6 +32,7 @@
 			}
 		},
 		gridEl = document.getElementById('theGrid'),
+		tabbar = document.querySelector('.tabbar'),
 		sidebarEl = document.getElementById('theSidebar'),
 		gridItemsContainer = gridEl.querySelector('section.grid'),
 		contentItemsContainer = gridEl.querySelector('section.content'),
@@ -138,6 +139,8 @@
 		
 		// body overlay
 		classie.add(bodyEl, 'view-single');
+		// 隐藏导航栏
+		classie.add(tabbar,'collapse');
 
 		setTimeout(function() {
 			// expands the placeholder
@@ -171,6 +174,8 @@
 
 		classie.remove(contentItem, 'content__item--show');
 		classie.remove(contentItemsContainer, 'content--show');
+		// 显示导航栏
+		classie.remove(tabbar,'collapse');
 		classie.remove(closeCtrl, 'close-button--show');
 		classie.remove(bodyEl, 'view-single');
 

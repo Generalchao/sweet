@@ -11,7 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/search_style.css">	
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<!-- jqery cdn 地址 -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 </head>
 <style type="text/css">	
 /*修改placeholder颜色*/
@@ -431,7 +432,7 @@
 			audioSrc:"http://download.taobaocdn.com/freedom/26370/media/shake.mp3",	//金币音频地址
 			coinWidth:40,           //金币宽度
 			coinHeight:40,          //金币高度
-			density:30
+			density:30              //金币密度
 		};
 		this.settings=this._extendDeep(this.defaults,opts);   //深拷贝
 		this.density=this.settings.density;                   //密度，即金币个数
@@ -645,7 +646,7 @@
 				if(lastH<=_self.cacheCanvas.height+_self.coinHeight){ //最后一个金币高度超出canvas的高度停止重绘
 					window.requestAnimationFrame(draw);  //重绘，递回调用绘制方法
 				}else{
-					console.log("金币都撒完了");
+					console.log("糖豆都撒完了");
 					_self._destory();
 				}
 				
@@ -736,11 +737,15 @@
         var x = y = z = last_x = last_y = last_z = 0;
 		var w_curTime=0;
         function init() {
-            if (window.DeviceMotionEvent) {
-                window.addEventListener('devicemotion', deviceMotionHandler, false);
-            } else {
-                alert('not support mobile event');
-            }
+        	// 下面是不支持非移动端的判断
+            // if (window.DeviceMotionEvent) {
+            //     window.addEventListener('devicemotion', deviceMotionHandler, false);
+            // } else {
+            //     alert('not support mobile event');
+            // }
+
+			window.addEventListener('devicemotion', deviceMotionHandler, false);
+
         }
         function deviceMotionHandler(eventData) {
             var acceleration = eventData.accelerationIncludingGravity;
