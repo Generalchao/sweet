@@ -264,7 +264,7 @@ width: 130px; font-size: 10px;}
 .edit_dialog div i{font-size: 20px;}
 
 .edit_dialog .edit_icon i{color: #ff0000;}
-.edit_dialog div i:before{background-color: #fff;border-radius: 100%;width: 44px;height: 44px;line-height: 44px;text-align: center;}
+.edit_dialog div i:before{background-color: #fff;border-radius: 100%;width: 44px;height: 44px;line-height: 44px;text-align: center;padding: 10px;}
 .z-index{z-index: 1005;}
 
 

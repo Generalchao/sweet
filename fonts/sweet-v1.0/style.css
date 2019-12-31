@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'sweet';
+  src:  url('fonts/sweet.eot?z88lhb');
+  src:  url('fonts/sweet.eot?z88lhb#iefix') format('embedded-opentype'),
+    url('fonts/sweet.ttf?z88lhb') format('truetype'),
+    url('fonts/sweet.woff?z88lhb') format('woff'),
+    url('fonts/sweet.svg?z88lhb#sweet') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sweet' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cancel:before {
+  content: "\e900";
+}
+.icon-heart-empty:before {
+  content: "\e901";
+}
+.icon-heart:before {
+  content: "\e902";
+}
+.icon-music_cloud:before {
+  content: "\e903";
+}
+.icon-play:before {
+  content: "\e904";
+}
+.icon-star:before {
+  content: "\e905";
+}
+.icon-change:before {
+  content: "\e800";
+}
+.icon-choiceness_active:before {
+  content: "\e801";
+}
+.icon-choiceness_default:before {
+  content: "\e802";
+}
+.icon-explore_active:before {
+  content: "\e803";
+}
+.icon-explore_default:before {
+  content: "\e804";
+}
+.icon-go:before {
+  content: "\e805";
+}
+.icon-mine_active:before {
+  content: "\e806";
+}
+.icon-mine_default:before {
+  content: "\e807";
+}
+.icon-search:before {
+  content: "\e808";
+}
+.icon-glyph-2:before {
+  content: "\e80b";
+}
+.icon-glyph-3:before {
+  content: "\e80c";
+}
+.icon-glyph-5:before {
+  content: "\e80e";
+}
+.icon-gift:before {
+  content: "\e811";
+}
+.icon-feedback:before {
+  content: "\e814";
+}
+.icon-more:before {
+  content: "\e815";
+}
+.icon-star2:before {
+  content: "\e816";
+}
+.icon-sugar:before {
+  content: "\e81f";
+}
+.icon-us:before {
+  content: "\e822";
+}
+.icon-guess:before {
+  content: "\e823";
+}
+.icon-history:before {
+  content: "\e824";
+}
+.icon-delete:before {
+  content: "\e826";
+}
+.icon-medal_active:before {
+  content: "\e82c";
+}
+.icon-medal_default:before {
+  content: "\e82d";
+}
+.icon-pause-1:before {
+  content: "\f00e";
+}
